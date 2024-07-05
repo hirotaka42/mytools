@@ -1,0 +1,8 @@
+services:
+  xiao-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: sh /app/script.sh
