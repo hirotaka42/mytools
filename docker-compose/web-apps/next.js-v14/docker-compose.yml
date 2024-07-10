@@ -1,0 +1,9 @@
+services:
+  xiao-web-nextjs-v14:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=development
