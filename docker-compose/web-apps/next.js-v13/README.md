@@ -53,7 +53,7 @@ npm run dev
 ## Prettierをインストールする
 
 ```
-npm install --save-dev prettier
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 次に、プロジェクトのルートディレクトリに.prettierrc.jsonファイルを作成し、以下のPrettier設定を記述してください。
@@ -75,7 +75,7 @@ npm install --save-dev prettier
 
 ```
 
-## .prettierrc ファイルの内容
+### .prettierrc ファイルの内容
 
 このファイルは、コードフォーマッターツールの Prettier の設定を定義しています。以下は各設定項目の説明です:
 
@@ -162,6 +162,24 @@ npm install --save-dev prettier
    - これにより、Prettierの設定と競合するようなルールをESLintで上書きすることを防ぐことができる。
 
 このように、ESLintの設定ファイルにPrettierの設定を組み込むことで、コードフォーマットの一貫性を保ちつつ、ESLintとPrettierの競合を避けることができます。
+
+### package.json に、lint, prettierの起動コマンドを追加
+
+```
+"scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+```
+
+以下のコマンドを実行してコードのフォーマットとESLintを実施
+```
+npm run format
+npm run lint
+```
 
 
 ## Gitの`.gitignore`ファイルを簡単に作成する
